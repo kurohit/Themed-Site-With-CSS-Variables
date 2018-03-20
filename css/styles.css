@@ -1,0 +1,32 @@
+body {
+  background-color: var(--bg, white);
+  color: var(--bg-text, black);
+}
+
+h1 {
+  margin: 0 0 15px;
+}
+
+button {
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  margin: 0 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  background: black;
+  color: white;
+}
+
+article {
+  padding: 50px;
+}
+
+article h2 {
+  margin-top: 100px;
+}
+
+article p {
+  font-size: 20px;
+}

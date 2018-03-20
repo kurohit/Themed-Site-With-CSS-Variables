@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Customize Site using CSS Variables</title>
+  </head>
+  <body>
+    <h1>Traffic Light</h1>
+    <div class="theme">
+      <button value="go">Go</button>
+      <button value="caution">Caution</button>
+      <button value="stop">Stop</button>
+    </div>
+    <article class="">
+      <h1>Hello Developers</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+      </p>
+      <h2>Where are everyone!!!</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+      </p>
+    </article>
+
+    <script type="text/javascript">
+      //Keep refernce to the root element (which is HTML here)
+      const root = document.documentElement;
+      //Kepp refernce to buttons [querySelectorAll yields an array-like data structure we can loop over. Iterate over each of the buttons and add an event listener to them, upon click.]
+      const themeBtns = document.querySelectorAll('.theme > button');
+
+      themeBtns.forEach((btn) => {
+        btn.addEventListener('click', handleThemeUpdate);
+      });
+
+      function handleThemeUpdate(e) {
+        switch (e.target.value) {
+          case 'go':
+            root.style.setProperty('--bg', 'green');
+            root.style.setProperty('--bg-text', 'white');
+            break;
+          case 'caution':
+            root.style.setProperty('--bg', 'yellow');
+            root.style.setProperty('--bg-text', 'black');
+            break;
+          case 'stop':
+            root.style.setProperty('--bg', 'red');
+            root.style.setProperty('--bg-text', 'white');
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
